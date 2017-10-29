@@ -16,14 +16,14 @@ app.post('/register', function (req, res) {
         {  res.write("Connecting to Database Failed");
             res.end();  }
         insertDocument(db, req.body, function() {
-            res.write("Successfully Registered");
+            res.write("Successfully Updated");
             res.end();       });    });
     var insertDocument = function(db, data, callback) {
         db.collection('Lab10').insertOne( data, function(err, result) {
             if(err)           {
-                res.write("Registration Failed");
+                res.write("venue Updation Failed");
                 res.end();           }
-            console.log("Registration Successful");
+            console.log("venue Updation Successful");
 
             callback();        });    };})
 app.post('/get-data',function (req,res) {
@@ -50,14 +50,14 @@ app.post('/update',function (req,res) {
             res.write("Connecting to Database Failed");
             res.end();        }
         updateDocument(db, req.body, function() {
-            res.write("Successfully Registered");
+            res.write("Successfully Updated");
             res.end();        });    });
     var id=req.body.id2;
     var item={fname:req.body.fn,lname:req.body.ln,email:req.body.ml};
     var updateDocument = function(db, data, callback) {
         db.collection('ase9').updateOne({"_id":ObjectId(id)},{$set:item}, function(err, result) {
             if(err)            {
-                res.write("Registration Failed");
+                res.write("Updation Failed for venue");
                 res.end();            }
             console.log("Updated Record");
             callback();        });    };})
@@ -65,7 +65,7 @@ app.post('/delete', function(req, res) {
     var id = req.body.id1;
     MongoClient.connect(url, function(err, db) {
         if(err)        {
-            res.write("Registration Failed");
+            res.write("Updation Failed");
             res.end();        }
         db.collection('ase9').deleteOne({"_id": ObjectId(id)}, function(err, result) {
             res.write("Successfully Deleted");
