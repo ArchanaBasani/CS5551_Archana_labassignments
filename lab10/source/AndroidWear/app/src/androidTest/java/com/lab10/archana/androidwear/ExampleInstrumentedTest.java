@@ -1,4 +1,4 @@
-package com.aselabassignment.pranoop.lab10androidwear;
+package com.lab10.archana.andriodwear;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.aselabassignment.pranoop.lab10androidwear", appContext.getPackageName());
+        assertEquals("com.lab10.archana.andriodwear", appContext.getPackageName());
     }
 }
