@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+
+        .menu input{
+            width: 300px;
+            background: #ffffff;
+            border: 2px solid #ffff00;
+            border-radius: 4px;
+            color: #5e5e5e;
+            font-family: 'Exo', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            padding: 6px;
+            margin-top: 10px;
+        }
+        .menu button{
+            width: 419px;
+            height:40px;
+            background: blue;
+            border:  2px solid #ffff00;
+            cursor: pointer;
+            border-radius: 4px;
+            color: #ffffff;
+            font-family: 'Exo', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            padding: 6px;
+            margin-top: 10px;
+        }
+
+
+        thead th {
+            font-weight: 400;
+            background: #8a97a0;
+            color: #FFF;
+        }
+
+        tr {
+            background: #f4f7f8;
+            border: 1px solid #FFF;
+            margin-bottom: 5px;
+        }
+
+        tr:nth-child(even) {
+            background: #e8eeef;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 20px;
+            font-weight: 300;
+        }
+
+        tfoot tr {
+            background: none;
+        }
+
+        tfoot td {
+            padding: 10px 2px;
+            color: #8a97a0;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: black;
+            padding: 14px 16px;
+            background-color: inherit;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ffff00 ;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+
+</head>
+<body style="background: url(https://image.ibb.co/h94MCb/1050580_shape_blue_yellow_pages_template_lines_wallpapers_hd_free_desktop_7680x4320_h.jpg) no-repeat center ;background-size:cover;  ">
+
+
+<div  ng-controller="HomeCtrl" style="top: 200px">
+    <div class="menu" id="div_SearchContainer">
+        <h1 align="absolute" style="text-align: center; color: #ffff00;background-color:blue; width:20px;">UMKC DOCUMENT INSERTION</h1>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">DOC Insertion
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#">pdf</a>
+                <a href="#">.txt</a>
+                <a href="#">jpeg</a>
+                <a href="#">doc</a>
+                <a href="#">png</a>
+                <a href="#">xlsx</a>
+            </div>
+            <input type="text" id="place" placeholder="Upload Here"/>
+            <button id="btn_getReview" ng-click="getVenues()">Upload</button>
+        </div>
+
+    </div> </br></br></br></br></br></br></br></br>
+    <div id="div_Documentlist">
+        <h2 style="text-align: center; color:#ffffff">Document status</h2>
+        <ul>
+            <li ng-repeat="Document in Documentlist" style="font-size: x-large; color: #ffffff; text-align: center; list-style: none list-style-position:inside;">
+                <a  href="" ng-click="getDocuments(Document)" style="font-size: x-large; color: #ffffff; text-align: center;"></a>
+            </li>
+        </ul>
+    </div>
+    <div id="div_ReviewList" style="display:none;"  >
+
+    </div>
+</div>
+
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script> function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+        }
+    }
+}</script>
+
+
+</body>
+</html>
