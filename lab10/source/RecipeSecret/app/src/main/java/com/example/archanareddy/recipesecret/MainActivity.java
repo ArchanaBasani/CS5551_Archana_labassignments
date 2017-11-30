@@ -38,7 +38,7 @@ public class MainActivity extends WearableActivity {
         key = (EditText) findViewById(R.id.recipe_name);
         String s = key.getText().toString();
         String z = s.replace(" ", "_");
-        String getURL = "https://api.nutritionix.com/v1_1/search/"+ z +"?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=481404ea&appKey=c624ca0b5e85f2f234653dfd8d5fa9c3";
+        String getURL = "https://api.nutritionix.com/v1_1/search/"+ z +"?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=4a24b224&appKey=e5041838f815b92b081f3417ff72c39a";
         String response = null;
         BufferedReader bfr = null;
         try {
